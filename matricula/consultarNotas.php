@@ -25,6 +25,7 @@
     <th width='10%' style="text-align: center;">NOTA 1</th>
     <th width='10%' style="text-align: center;">NOTA 2</th>
     <th width='10%' style="text-align: center;">NOTA 3</th>
+    <th width='10%' style="text-align: center;">NOTA final</th>
     </tr>
 <?php
 
@@ -46,7 +47,9 @@
             <td>
               <input type="text" name="nota3[]" class="form-control" value="0">
             </td>
-           
+            <td>
+              <input type="text" name="notaFinal[]" class="form-control" value="0">
+            </td>
           <?php
     }
 ?>

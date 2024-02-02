@@ -339,26 +339,26 @@ document.write(dias_semana[fecha_actual.getDay()] + ", " + fecha_actual.getDate(
 </form>
 <style>
   .chat-container {
-  
+    display: none;
     position: fixed;
-    bottom: 20px; /* Ajusta según sea necesario */
-    right: 20px; /* Ajusta según sea necesario */
-    z-index: 999; /* Asegura que el chat esté encima de otros elementos */
-    background-color: #fff; /* Ajusta según sea necesario */
-    border: 1px solid #ccc; /* Ajusta según sea necesario */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ajusta según sea necesario */
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
 
   .chat-header {
     cursor: pointer;
-    background-color: #4CAF50; /* Ajusta según sea necesario */
-    color: #fff; /* Ajusta según sea necesario */
+    background-color: #4CAF50;
+    color: #fff;
     padding: 10px;
     text-align: center;
   }
 
   .chat-box {
-    max-height: 200px; /* Ajusta según sea necesario */
+    max-height: 200px;
     overflow-y: auto;
     padding: 10px;
   }
@@ -368,7 +368,7 @@ document.write(dias_semana[fecha_actual.getDay()] + ", " + fecha_actual.getDate(
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 1px solid #ccc; /* Ajusta según sea necesario */
+    border-top: 1px solid #ccc;
   }
 
   #user-input {
@@ -379,19 +379,28 @@ document.write(dias_semana[fecha_actual.getDay()] + ", " + fecha_actual.getDate(
 
   button {
     padding: 5px 10px;
-    background-color: #4CAF50; /* Ajusta según sea necesario */
-    color: #fff; /* Ajusta según sea necesario */
+    background-color: #4CAF50;
+    color: #fff;
     border: none;
     cursor: pointer;
   }
 </style>
 
-<div class="chat-container">
-        <div class="chat-header" onclick="toggleChat()">Chatbot</div>
-        <div class="chat-box" id="chat-box"></div>
-        <div class="chat-input">
-            <input type="text" id="user-input" placeholder="Escribe aquí..." autocomplete="off">
-            <button onclick="sendMessage()">Enviar</button>
-        </div>
+<button onclick="toggleChat()">Abrir Chat</button>
+
+<div class="chat-container" id="chat-container">
+  <div class="chat-header" onclick="toggleChat()">Chatbot</div>
+  <div class="chat-box" id="chat-box"></div>
+  <div class="chat-input">
+    <input type="text" id="user-input" placeholder="Escribe aquí..." autocomplete="off">
+    <button onclick="sendMessage()">Enviar</button>
+  </div>
 </div>
-    <script src="../menu/scrip.js"></script>
+
+<script src="../menu/script.js"></script>
+<script>
+  function toggleChat() {
+    var chatContainer = document.getElementById('chat-container');
+    chatContainer.style.display = (chatContainer.style.display === 'none' || chatContainer.style.display === '') ? 'block' : 'none';
+  }
+</script>
