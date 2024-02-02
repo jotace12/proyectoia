@@ -1,6 +1,6 @@
 <?php
 $question = $_POST['question'];
-$conexion = require 'db_connection.php';
+$conexion = require '../menu/db_connection.php';
 
 // Aquí puedes agregar la lógica para generar respuestas del chatbot
 // Por ejemplo, podrías usar un arreglo asociativo que mapee preguntas a respuestas
